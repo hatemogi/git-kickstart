@@ -27,10 +27,17 @@ class: center, middle
 * Git에 관심은 있지만, 아직 기회가 닿지 않은 분
 
 ---
+# Git 사용시 이득
+
+.full-width[![](img/dog-benefit.jpg)]
+개인/팀 개발 생산성 대폭 향상
+---
+
 # 목표: Kickstart
 
 .full-width[[![](img/kickstart.png)](https://youtu.be/olBM1U5bO7Y?t=8s)]
 버전관리 & Git 사용 설득
+
 ---
 
 # 차례
@@ -151,7 +158,6 @@ DVCS
 
 # 특징 (2) - 차이점 or 스냅샷 기록
 
-
 .full-width[![](img/deltas.png)]
 .center[각 파일에 대한 변화를 저장하는 시스템]
 
@@ -172,6 +178,7 @@ DVCS
 # 개념 (1) - 세가지 상태 영역
 
 ## 작업 디렉토리
+
 ## 인덱스
 ## 히스토리
 
@@ -185,9 +192,14 @@ DVCS
 ---
 # 개념 (3) - 브랜치
 
-* 하나의 트리와 유래된 커밋들을 참조
-* 결국 하나의 스냅샷을 의미
-* SHA1 아이디
+* 커밋을 참조하는 포인터
+* 커밋이 추가될 때, 따라서 이동.
+* 기본은 `master` 브랜치
+
+---
+# 개념 (4) - 태그
+
+* 커밋에 이름(표시)을 붙인 것
 
 ---
 class: center, middle, inverse
@@ -222,11 +234,11 @@ apt-get install git
 
 ---
 
-# Git: 최초 설정
+# (1) 최초 설정
 
 ```bash
-git config --global user.name "성명"
-git config --global user.email "이메일"
+git config --global user.name "홍길동"
+git config --global user.email "gd.hong@mail.com"
 ```
 
 ```bash
@@ -236,37 +248,56 @@ git config --global push.default simple
 
 ```bash
 git config --global core.quotepath false
-git config --global core.precomposeunicode true
 ```
 
 ```bash
+git config --global core.precomposeunicode true
 git config --global credential.helper osxkeychain
 ```
 
 ---
 
-# Git 저장소 만들기
+# (2) 저장소 만들기: 두가지 방법
 
-## 작업중인 디렉토리에서 새로 만들기
+## 기존 디렉터리에서 만들기
 
 ```bash
-git init
+$ git init
+```
+
+```bash
+$ git add README.md
+$ git commit -m "최초 커밋"
 ```
 
 ## 리모트 저장소에서 복제하기
 
 ```bash
-git clone [리모트 저장소 주소]
+$ git clone https://github.com/hatemogi/git-kickstart
 ```
 
-### 예)
+---
+
+# (3) 저장소에 변경 기록하기
+
+.full-width[![](img/lifecycle.png)]
+
+---
+
+# (3) 저장소에 변경 기록하기
 
 ```bash
-git clone https://github.com/hatemogi/git-tutorial-jeju
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory cleangit add README.md
 ```
 
 
 ---
+
+
+
 
 # 시뮬레이션
 
