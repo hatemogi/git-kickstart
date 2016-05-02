@@ -23,8 +23,12 @@ h1 strong {
 
 blockquote {
   background-color: #eee;
-  border-radius: 0.5rem;
   padding: 0.2rem 0.5rem;
+}
+
+pre code, blockquote {
+  border-radius: 0.3rem;
+
 }
 .remark-code, .remark-inline-code {
   font-family: 'Nanum Gothic Coding', 'Ubuntu Mono';

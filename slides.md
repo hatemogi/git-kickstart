@@ -253,7 +253,7 @@ git config --global credential.helper osxkeychain
 
 ---
 
-# 실습(2) - 저장소 만들기
+# 실습(2) - 저장소 생성
 
 ## 기존 디렉터리에서 만들기
 
@@ -291,11 +291,37 @@ nothing to commit, working directory clean
 
 ---
 
-# 실습(3.2) - 새 파일 추가(Untracked)
+# 실습(3.2) - 새 파일 (Untracked)
 
 ```bash
+$ echo "new awesome code" > main.txt
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	main.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
 ```
 
+---
+
+# 실습(3.3) - 파일 등록 (Tracking)
+
+```bash
+$ git add main.txt
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	main.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
 
 ---
 
