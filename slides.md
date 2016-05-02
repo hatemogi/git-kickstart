@@ -514,20 +514,124 @@ class: center, middle
 
 ---
 
-# 실습(4) - 리모트에서 가져오기
+# 중앙집중 저장소
 
-```bash
-$ git fetch
-```
-
-
+.full-width[[![](img/centralized_workflow.png)](https://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows)]
 ---
 
+# 실습(4) - 리모트 저장소
 
+* 리모트에서 가져오기
+```bash
+$ git pull
+```
+
+* 리모트에 보내기
+```bash
+$ git push
+```
+
+---
 
 class: center, middle
 
 ## 브랜치 작업
+
+---
+
+## 실습(5) - 브랜치 만들기
+
+```bash
+$ git branch testing
+```
+
+.full-width[![](img/head-to-master.png)]
+
+---
+
+## 실습(5) - 브랜치 이동
+
+```bash
+$ git checkout testing
+```
+
+.full-width[![](img/head-to-testing.png)]
+
+---
+
+## 실습(5) - `testing`에서 커밋
+
+```bash
+$ vim test.rb
+$ git commit -a -m 'made a change'
+```
+
+.full-width[![](img/advance-testing.png)]
+
+---
+
+## 실습(5) - 다시 `master`로 이동
+
+```bash
+$ git checkout master
+```
+
+.full-width[![](img/checkout-master.png)]
+
+---
+
+## 실습(5) - `master`에서 커밋
+
+```bash
+$ vim test.rb
+$ git commit -a -m 'made other changes'
+```
+
+.full-width[![](img/advance-master.png)]
+
+---
+
+# 실습(5) - 요약
+
+* [git branch] - 브랜치 만들기
+* [git checkout] - 브랜치 이동하기
+
+---
+
+class: center, middle
+
+## 브랜치 병합
+merge / rebase
+
+---
+
+## 실습(6) - 브랜치 merge
+
+```bash
+$ git checkout master
+$ git merge testing
+```
+
+.full-width[![](img/basic-merging-1.png)]
+
+---
+
+## 실습(6) - merge 커밋
+
+.full-width[![](img/basic-merging-2.png)]
+
+---
+
+# 실습(6) - 요약
+
+* [git merge] - 브랜치 병합
+* [git rebase] - 브랜치 리베이스
+
+---
+
+## 흔한 브랜치 모델
+
+.full-width[![](img/lr-branches-2.png)]
 
 ---
 
@@ -536,8 +640,21 @@ class: center, middle
 ## 고급 명령어
 
 ---
+## 고급 명령어
 
-# 시연 도구로 실습
+* [git rebase -i][git rebase]
+* [git stash]
+* [git reflog]
+* [git submodule]
+
+---
+
+class: center, middle
+
+## 시각화 도구 실습
+
+---
+# 시각화 도구 실습
 
 .full-width[[![](img/learnbranch.png)](http://learnbranch.urigit.com)]
 
@@ -625,4 +742,10 @@ class: center, middle, inverse
 [git commit]: https://git-scm.com/docs/git-commit
 [git diff]: https://git-scm.com/docs/git-diff
 [git reset]: https://git-scm.com/docs/git-reset
-[git log]:https://git-scm.com/docs/git-log
+[git log]: https://git-scm.com/docs/git-log
+[git reflog]: https://git-scm.com/docs/git-reflog
+[git rebase]: https://git-scm.com/docs/git-rebase
+[git stash]: https://git-scm.com/docs/git-stash
+[git submodule]: https://git-scm.com/docs/git-submodule
+[git branch]: https://git-scm.com/docs/git-branch
+[git checkout]: https://git-scm.com/docs/git-checkout
