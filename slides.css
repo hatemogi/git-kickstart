@@ -20,16 +20,15 @@ h1 strong {
   font-size: 2em;
 }
 
-
 blockquote {
   background-color: #eee;
   padding: 0.2rem 0.5rem;
-
-
-  pre} code, blockquote {
-  border-radius: 0.3rem;
-
 }
+
+pre code, blockquote {
+  border-radius: 0.3rem;
+}
+
 .remark-code, .remark-inline-code {
   font-family: 'Nanum Gothic Coding', 'Ubuntu Mono';
 }
@@ -44,6 +43,10 @@ blockquote {
   color: #f3f3f3;
   line-height: 0.8em;
   border: none;
+}
+
+.pull-left {
+  float: left;
 }
 
 .full-width { width: 100%; }

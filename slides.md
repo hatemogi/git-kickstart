@@ -2,7 +2,7 @@ class: center, middle
 
 ![](img/logo@2x.png)
 ## Kickstart
-
+http://hatemogi.github.io/git-kickstart/
 ---
 
 # 김대현
@@ -46,7 +46,6 @@ class: center, middle
 1. Git 개념 파악
 1. CLI로 명령어 실습
 1. 시각화 도구로 복습
-
 ---
 
 class: center, middle, inverse
@@ -145,13 +144,17 @@ class: center, middle, inverse
 * Subversion과도 다릅니다.
 * __한마디로 조금 노력이 필요합니다.__
 * 걱정금지: 그래봐야 별 거 아닙니다.
+
+---
+
+background-image: url("img/begin-root.jpg")
+
 ---
 
 background-image: url("img/distributed.png")
 
 # 특징(1)
-
-DVCS
+### DVCS
 
 ---
 
@@ -168,63 +171,63 @@ DVCS
 .center[시간순으로 프로젝트의 스냅샷을 저장]
 
 ---
+
+# 특징(3) - 세 가지 상태 공간
+
+.full-width[![](img/areas.png)]
+
+---
+
 class: center, middle
 
 ## Git 핵심 개념 공략
 
 ---
 
+# 커밋과 트리 <small>commit & tree</small>
 
-# 세 가지 상태 영역
-
-.full-width[![](img/areas.png)]
-
----
-
-# 커밋<small>commit</small>
-
-.half-width[
-* 하나의 트리와 유래된 커밋들을 참조
-* 결국 하나의 스냅샷을 의미
-* SHA1 아이디
-]
-
-.half-width[
-.full-width[![](img/data-model-3.png)]
-]
+.full-width[![](img/commit-and-tree.png)]
 
 ---
 
-# 브랜치<small>branch</small>
+# 커밋과 부모들 <small>commits & parents</small>
 
+.full-width[![](img/commits-and-parents.png)]
+
+* 커밋은 트리로 하나의 스냅샷을 참조
+* 부모 커밋을 참조해서 커밋 히스토리 추적
+---
+
+# 브랜치 <small>branch</small>
+
+.half-width[
 * 커밋을 참조하는 포인터
 * 커밋이 추가될 때, 따라서 이동.
 * 기본은 `master` 브랜치
 * `HEAD`는 현재 브랜치 포인터
 
-## 사용예
+## 활용예
 
-* 배포 / 개발 / 핫픽스 / 이슈 브랜치
-* 고객사(A) / 고객사(B) / ...
+* 작업별: 배포 / 개발 / 핫픽스 / ...
+* 대상별: 고객사(A) / 고객사(B) / ...
+]
+
+.half-width[
+.full-width[![](img/branch-and-history.png)]
+]
+
+---
+
+background-image: url("img/foundation.jpg")
 
 ---
 
-# 브랜치<small>branch</small>
-
-.center.full-height[![](img/data-model-4.png)]
-
----
-
-# 개념(4) - 태그
-
-* 커밋에 이름(표시)을 붙인 것
-
----
 class: center, middle, inverse
 
 # 기 승 __전__ 결
 
 실습 해보잣!
+
 ---
 
 # 기본 실습 순서
@@ -260,7 +263,7 @@ class: center, middle
 ]
 ---
 
-# 실습(1) - 최초 설정
+# 최초 설정
 
 ```bash
 git config --global user.name "홍길동"
@@ -281,30 +284,42 @@ git config --global core.precomposeunicode true
 git config --global credential.helper osxkeychain
 ```
 
+```bash
+git config --list
+```
 ---
 
-# 실습(2) - 저장소 생성
+class: center, middle
 
-## 기존 디렉터리에서 만들기
+## 기본 실습
 
+---
+
+# 실습(1) - 저장소 생성
+
+1. 기존 디렉터리에서 만들기
 ```bash
 $ git init
 ```
-
 ```bash
 $ git add README.md
 $ git commit -m "최초 커밋"
 ```
 
-## 리모트 저장소에서 복제하기
-
+1. 리모트 저장소에서 복제하기
 ```bash
 $ git clone https://github.com/hatemogi/git-kickstart
+Cloning into 'git-kickstart'...
+remote: Counting objects: 74, done.
+remote: Compressing objects: 100% (65/65), done.
+remote: Total 74 (delta 30), reused 53 (delta 9), pack-reused 0
+Unpacking objects: 100% (74/74), done.
+Checking connectivity... done.
 ```
 
 ---
 
-# 실습(3) - 변경 기록하기
+# 실습(2) - 변경 기록하기
 
 ```bash
 $ git status
@@ -319,6 +334,8 @@ nothing to commit, working directory clean
 
 ```bash
 $ echo "new awesome code" > main.txt
+```
+```bash
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
@@ -336,6 +353,8 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 ```bash
 $ git add main.txt
+```
+```bash
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
@@ -347,6 +366,145 @@ Changes to be committed:
 
 .full-width[![](img/lifecycle.png)]
 
+---
+
+## 첫번째 커밋
+
+```bash
+$ git commit -m "main.txt 추가"
+[master 92cea98] main.txt 추가
+ 1 file changed, 1 insertion(+)
+ create mode 100644 main.txt
+
+```
+
+
+.full-width[![](img/lifecycle.png)]
+
+---
+## 커밋 이력 보기
+
+```bash
+$ git log
+commit 92cea987662afe5c6b0467440b0206480181ff5a
+Author: Daehyun Kim <hatemogi@gmail.com>
+Date:   Mon May 2 23:42:10 2016 +0900
+
+    main.txt 추가
+
+commit 5eda0b9c3a5ce8701c11d4de5e03e04834f6d778
+Author: Daehyun Kim <hatemogi@gmail.com>
+Date:   Mon May 2 23:40:43 2016 +0900
+
+    열혈 업데이트
+
+commit 095335e14cb4c8952659c408322771176d961b98
+Author: Daehyun Kim <hatemogi@gmail.com>
+Date:   Mon May 2 22:20:01 2016 +0900
+
+    로컬 웹서버 필요 없다
+```
+
+---
+# 실습(2) - 요약
+
+* [git clone] - 리모트 저장소 복제
+* [git status] - 로컬 저장소 상태 확인
+* [git add] - 새 파일 등록(추적)
+* [git commit] - 변경 내용 커밋
+* [git log] - 커밋 이력 확인
+
+---
+
+# 실습(3) <small>차이점 확인하며 커밋</small>
+
+```bash
+$ echo "the next line" >> main.txt
+```
+```bash
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   main.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+---
+
+## 차이점 확인
+
+```bash
+$ git diff
+diff --git a/main.txt b/main.txt
+index a7c6f28..9c8904a 100644
+--- a/main.txt
++++ b/main.txt
+@@ -1 +1,2 @@
+ new awesome code
++the next line
+```
+
+```bash
+$ git commit -am "add 3rd line"
+```
+
+---
+## 커밋 로그 재작성
+
+```bash
+$ git commit --amend -am "add 2nd line"
+```
+
+---
+
+## 커밋 이력 보기 -p
+
+```bash
+$ git log -p
+commit 7ba9d11890531adeb256a34329a0214c06f22348
+Author: Daehyun Kim <hatemogi@gmail.com>
+Date:   Tue May 3 00:58:52 2016 +0900
+
+    add 2nd line
+
+diff --git a/main.txt b/main.txt
+index a7c6f28..9c8904a 100644
+```
+
+---
+
+## 커밋 리셋
+
+```bash
+$ git reset HEAD^^
+```
+
+```bash
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	main.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+---
+# 실습(3) - 요약
+
+* [git diff] - HEAD와 차이 비교
+* [git commit -am][git commit] - 스테이지 커지지 않고 바로 커밋
+* [git commit --amend][git commit] - 커밋 재작성
+* [git log -p][git log] - 커밋 이력을 차이점과 함께 확인
+* [git reset HEAD^^][git reset] - 이전 이전 커밋으로 리셋
 
 ---
 
@@ -356,22 +514,26 @@ class: center, middle
 
 ---
 
-class: center, middle
+# 실습(4) - 리모트에서 가져오기
 
-## 고급 명령어
+```bash
+$ git fetch
+```
+
 
 ---
 
 
-# 실습(3) - 요약
 
-* [git init]
-* [git clone]
-* [git status]
-* [git add]
-* [git commit]
-* [git diff]
-* [git log]
+class: center, middle
+
+## 브랜치 작업
+
+---
+
+class: center, middle
+
+## 고급 명령어
 
 ---
 
@@ -381,12 +543,10 @@ class: center, middle
 
 ---
 
-# 시뮬레이션
+# 참고: D3 시각화
 
-
-> [Git w/D3](https://onlywei.github.io/explain-git-with-d3/)
->
-> [Git w/D3 zen](https://onlywei.github.io/explain-git-with-d3/#zen)
+* [Git w/D3](https://onlywei.github.io/explain-git-with-d3/)
+* [Git w/D3 zen](https://onlywei.github.io/explain-git-with-d3/#zen)
 
 
 ---
@@ -423,13 +583,14 @@ class: center, middle, inverse
 
 ---
 
-# 작업 흐름 (Git Flow)
+background-image: url("img/gitflow.gif")
 
-*
+[Git Flow](https://github.com/nvie/gitflow)
+
 
 ---
 
-# 더 볼 자료
+# 참고 자료
 
 .half-width[
 ## 한국어
@@ -439,6 +600,7 @@ class: center, middle, inverse
 * [Pro Git 2판](https://git-scm.com/book/ko/v2)
 * [생활코딩 GIT](https://opentutorials.org/course/1492)
 * [Git 브랜치 배우기](http://learnbranch.urigit.com)
+* [git-flow cheatsheet](http://danielkummer.github.io/git-flow-cheatsheet/index.ko_KR.html)
 ]
 
 .half-width[
@@ -462,4 +624,5 @@ class: center, middle, inverse
 [git add]: https://git-scm.com/docs/git-add
 [git commit]: https://git-scm.com/docs/git-commit
 [git diff]: https://git-scm.com/docs/git-diff
+[git reset]: https://git-scm.com/docs/git-reset
 [git log]:https://git-scm.com/docs/git-log
