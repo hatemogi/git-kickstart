@@ -24,9 +24,9 @@ h1 strong {
 blockquote {
   background-color: #eee;
   padding: 0.2rem 0.5rem;
-}
 
-pre code, blockquote {
+
+  pre} code, blockquote {
   border-radius: 0.3rem;
 
 }

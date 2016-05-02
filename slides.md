@@ -42,11 +42,10 @@ class: center, middle
 
 # 차례
 
-1. 버전 관리가 필요한 이유
-1. Git이 좋은 점
+1. (Git으로) 버전 관리를 해야하는 이유
 1. Git 개념 파악
-1. 시각화 도구로 연습
-1. CLI 실습
+1. CLI로 명령어 실습
+1. 시각화 도구로 복습
 
 ---
 
@@ -58,7 +57,7 @@ class: center, middle, inverse
 
 ---
 
-# 2000년 - 버전관리 lv.0
+# 2000년 - 버전관리 LV.0
 
 * 물류 IT 회사
 * 전자문서 중계 클라이언트/서버
@@ -72,7 +71,7 @@ cp -R [소스DIR] [적당한-새이름]
 ```
 
 ---
-# 2004년 - 버전관리 lv.2
+# 2004년 - 버전관리 LV.2
 
 * Daum 카페 개발팀 입사
 * 개발팀만 10+명
@@ -88,7 +87,7 @@ cp -R [소스DIR] [적당한-새이름]
 
 ---
 
-# 2008년 - 버전관리 lv.3
+# 2008년 - 버전관리 LV.3
 
 * Daum 캘린더 개발 TFT
 * 사내 표준 VCS 시스템 - Subversion (SVN)
@@ -101,7 +100,7 @@ cp -R [소스DIR] [적당한-새이름]
 .footnote[[다음 캘린더 서비스 개발 비하인드 스토리](https://medium.com/happyprogrammer-in-jeju/다음-캘린더-서비스의-비하인드-스토리-ec0faac67f05)]
 ---
 
-# 2012년 - 버전관리 lv.4
+# 2012년 - 버전관리 LV.4
 
 * 사내 Git 저장소 시스템 구축
 * Git을 쓰니 비로소 브랜치를 쓸 수 있게 됨
@@ -169,6 +168,12 @@ DVCS
 .center[시간순으로 프로젝트의 스냅샷을 저장]
 
 ---
+class: center, middle
+
+## Git 핵심 개념 공략
+
+---
+
 
 # 개념(1) - 세 가지 상태 영역
 
@@ -182,6 +187,7 @@ DVCS
 * 결국 하나의 스냅샷을 의미
 * SHA1 아이디
 
+.full-width[![](img/data-model-3.png)]
 ---
 
 # 개념(3) - 브랜치
@@ -189,7 +195,7 @@ DVCS
 * 커밋을 참조하는 포인터
 * 커밋이 추가될 때, 따라서 이동.
 * 기본은 `master` 브랜치
-
+* `HEAD`는 현재 브랜치 포인터
 ---
 
 # 개념(4) - 태그
@@ -204,12 +210,19 @@ class: center, middle, inverse
 실습 해보잣!
 ---
 
-# 실습 순서
+# 기본 실습 순서
 
-1. 클라이언트 설치
-1. 최초 설정
-1. 저장소 만들기
-1. 파일 변경하기
+1. 설치 & 설정
+1. 기본 명령어
+1. 리모트 저장소 활용
+1. 브랜치 활용
+1. 고급 명령어
+
+---
+
+class: center, middle
+
+## 설치 & 설정
 
 ---
 
@@ -276,12 +289,6 @@ $ git clone https://github.com/hatemogi/git-kickstart
 
 # 실습(3) - 변경 기록하기
 
-.full-width[![](img/lifecycle.png)]
-
----
-
-# 실습(3.1) - 현재 상태 확인
-
 ```bash
 $ git status
 On branch master
@@ -289,9 +296,9 @@ Your branch is up-to-date with 'origin/master'.
 nothing to commit, working directory clean
 ```
 
----
+.full-width[![](img/lifecycle.png)]
 
-# 실습(3.2) - 새 파일 (Untracked)
+---
 
 ```bash
 $ echo "new awesome code" > main.txt
@@ -306,22 +313,48 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 
----
+.full-width[![](img/lifecycle.png)]
 
-# 실습(3.3) - 파일 등록 (Tracking)
+---
 
 ```bash
 $ git add main.txt
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
 
-	main.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
+	new file:   main.txt
 ```
+
+.full-width[![](img/lifecycle.png)]
+
+
+---
+
+class: center, middle
+
+## 리모트 저장소 활용
+
+---
+
+class: center, middle
+
+## 고급 명령어
+
+---
+
+
+# 실습(3) - 요약
+
+* [git init]
+* [git clone]
+* [git status]
+* [git add]
+* [git commit]
+* [git diff]
+* [git log]
 
 ---
 
@@ -341,36 +374,62 @@ class: center, middle, inverse
 더 잘 쓰려면?
 
 ---
-# 무료 GUI 클라이언트
+## 무료 GUI 클라이언트
 
 * [GitHub Desktop: Simple collaboration from your desktop](https://desktop.github.com)
 * [SourceTree: A free Git & Mercurial client for Windows or Mac](https://www.sourcetreeapp.com)
 * [GitKraken: The downright luxurious Git client, for Windows, Mac & Linux](https://www.gitkraken.com)
 
-# 무료 TUI(?) 클라이언트
+## 무료 TUI(?) 클라이언트
 
 * [Tig: Text-mode interface for git](https://github.com/jonas/tig)
 
 ---
-# IDE 플러그인
-# 더 볼 자료
+## IDE 플러그인
+
+* IntelliJ, Eclipse, XCode, Android Studio, Visual Studio
+
+## Text Editor 플러그인
+
+* Sublime Text, Atom, Emacs, Vim
 
 ## 도서
 
-## 웹사이트
-
+* [프로 Git 2판: 그림으로 이해하는 Git의 작동 원리와 사용법](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=79232604)
+* [소셜 코딩으로 이끄는 GitHub 실천 기술](http://www.aladin.co.kr/shop/wproduct.aspx?ItemId=51796592)
 
 ---
 
-# 참고자료
+# 더 볼 자료
 
+.half-width[
 ## 한국어
 * [git - 간편 안내서](http://rogerdudler.github.io/git-guide/index.ko.html)
 * [A Visual Git Reference](https://marklodato.github.io/visual-git-guide/index-ko.html)
 * [[NDC16] Effective Git](http://www.slideshare.net/kexplo/ndc2016-effective-git)
 * [Pro Git 2판](https://git-scm.com/book/ko/v2)
 * [생활코딩 GIT](https://opentutorials.org/course/1492)
+]
 
-## 영문
+.half-width[
+## English
+
 * [Try Git](http://try.github.io/)
 * [Visualiing Git Concepts with D3](https://onlywei.github.io/explain-git-with-d3/)
+* [GitHub Cheatsheet (PDF)](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf)
+* [Visual Git Cheatsheet](http://ndpsoftware.com/git-cheatsheet.html)
+]
+---
+class: center, middle, inverse
+
+# 감사합니다
+
+> [강의 평가 설문 참여하기](http://goo.gl/forms/aJAEP6cpmr)
+
+[git init]: https://git-scm.com/docs/git-init
+[git clone]: https://git-scm.com/docs/git-clone
+[git status]: https://git-scm.com/docs/git-status
+[git add]: https://git-scm.com/docs/git-add
+[git commit]: https://git-scm.com/docs/git-commit
+[git diff]: https://git-scm.com/docs/git-diff
+[git log]:https://git-scm.com/docs/git-log
