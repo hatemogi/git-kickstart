@@ -30,6 +30,10 @@ pre code, blockquote {
   font-family: 'Roboto Mono', 'Ubuntu Mono';
 }
 
+.remark-slide-content {
+  font-size: 25px;
+}
+
 .inverse {
   background: #272822;
   color: #777872;
