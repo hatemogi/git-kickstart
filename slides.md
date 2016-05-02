@@ -180,7 +180,7 @@ background-image: url("img/distributed.png")
 
 class: center, middle
 
-## Git 핵심 개념 공략
+# Git 핵심 개념 공략
 
 ---
 
@@ -242,7 +242,7 @@ class: center, middle, inverse
 
 class: center, middle
 
-## 설치 & 설정
+# 설치 & 설정
 
 ---
 
@@ -291,7 +291,7 @@ git config --list
 
 class: center, middle
 
-## 기본 실습
+# 기본 실습
 
 ---
 
@@ -510,7 +510,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 class: center, middle
 
-## 리모트 저장소 활용
+# 리모트 저장소
 
 ---
 
@@ -535,7 +535,7 @@ $ git push
 
 class: center, middle
 
-## 브랜치 작업
+# 브랜치 기본
 
 ---
 
@@ -559,7 +559,7 @@ $ git checkout testing
 
 ---
 
-## 실습(5) - `testing`에서 커밋
+## 실습(5) - testing에서 커밋
 
 ```bash
 $ vim test.rb
@@ -570,7 +570,7 @@ $ git commit -a -m 'made a change'
 
 ---
 
-## 실습(5) - 다시 `master`로 이동
+## 실습(5) - 다시 master로 이동
 
 ```bash
 $ git checkout master
@@ -580,7 +580,7 @@ $ git checkout master
 
 ---
 
-## 실습(5) - `master`에서 커밋
+## 실습(5) - master에서 커밋
 
 ```bash
 $ vim test.rb
@@ -600,7 +600,7 @@ $ git commit -a -m 'made other changes'
 
 class: center, middle
 
-## 브랜치 병합
+# 브랜치 병합
 merge / rebase
 
 ---
@@ -622,6 +622,12 @@ $ git merge testing
 
 ---
 
+## 실습(6) - rebase
+
+.full-width[![](img/basic-rebase-3.png)]
+
+---
+
 # 실습(6) - 요약
 
 * [git merge] - 브랜치 병합
@@ -637,10 +643,10 @@ $ git merge testing
 
 class: center, middle
 
-## 고급 명령어
+# 고급 명령어
 
 ---
-## 고급 명령어
+# 고급 명령어
 
 * [git rebase -i][git rebase]
 * [git stash]
@@ -651,7 +657,7 @@ class: center, middle
 
 class: center, middle
 
-## 시각화 도구 실습
+# 시각화 도구 실습
 
 ---
 # 시각화 도구 실습
@@ -745,6 +751,7 @@ class: center, middle, inverse
 [git log]: https://git-scm.com/docs/git-log
 [git reflog]: https://git-scm.com/docs/git-reflog
 [git rebase]: https://git-scm.com/docs/git-rebase
+[git merge]: https://git-scm.com/docs/git-merge
 [git stash]: https://git-scm.com/docs/git-stash
 [git submodule]: https://git-scm.com/docs/git-submodule
 [git branch]: https://git-scm.com/docs/git-branch

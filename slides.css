@@ -1,19 +1,16 @@
-/*
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
-      @import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
-*/
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono);
+@import url(http://fonts.googleapis.com/earlyaccess/hanna.css);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
 
 body {
-  font-family: 'Nanum Myeongjo', 'Droid Serif', sans-serif;
+  font-family: 'Droid Serif','Apple SD Gothic Neo', sans-serif;
   line-height: 1.5;
 }
 
 h1, h2, h3 {
-  font-family: 'Apple SD Gothic Neo', 'Hanna', 'Yanone Kaffeesatz';
-  font-weight: bold;
-
+  font-family: 'Yanone Kaffeesatz', 'Hanna', 'Apple SD Gothic Neo';
+  font-weight: normal;
 }
 
 h1 strong {
@@ -30,7 +27,7 @@ pre code, blockquote {
 }
 
 .remark-code, .remark-inline-code {
-  font-family: 'Nanum Gothic Coding', 'Ubuntu Mono';
+  font-family: 'Roboto Mono', 'Ubuntu Mono';
 }
 
 .inverse {
