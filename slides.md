@@ -175,27 +175,44 @@ class: center, middle
 ---
 
 
-# 개념(1) - 세 가지 상태 영역
+# 세 가지 상태 영역
 
 .full-width[![](img/areas.png)]
 
 ---
 
-# 개념(2) - 커밋
+# 커밋<small>commit</small>
 
+.half-width[
 * 하나의 트리와 유래된 커밋들을 참조
 * 결국 하나의 스냅샷을 의미
 * SHA1 아이디
+]
 
+.half-width[
 .full-width[![](img/data-model-3.png)]
+]
+
 ---
 
-# 개념(3) - 브랜치
+# 브랜치<small>branch</small>
 
 * 커밋을 참조하는 포인터
 * 커밋이 추가될 때, 따라서 이동.
 * 기본은 `master` 브랜치
 * `HEAD`는 현재 브랜치 포인터
+
+## 사용예
+
+* 배포 / 개발 / 핫픽스 / 이슈 브랜치
+* 고객사(A) / 고객사(B) / ...
+
+---
+
+# 브랜치<small>branch</small>
+
+.center.full-height[![](img/data-model-4.png)]
+
 ---
 
 # 개념(4) - 태그
@@ -358,6 +375,12 @@ class: center, middle
 
 ---
 
+# 시연 도구로 실습
+
+.full-width[[![](img/learnbranch.png)](http://learnbranch.urigit.com)]
+
+---
+
 # 시뮬레이션
 
 
@@ -400,6 +423,12 @@ class: center, middle, inverse
 
 ---
 
+# 작업 흐름 (Git Flow)
+
+*
+
+---
+
 # 더 볼 자료
 
 .half-width[
@@ -409,6 +438,7 @@ class: center, middle, inverse
 * [[NDC16] Effective Git](http://www.slideshare.net/kexplo/ndc2016-effective-git)
 * [Pro Git 2판](https://git-scm.com/book/ko/v2)
 * [생활코딩 GIT](https://opentutorials.org/course/1492)
+* [Git 브랜치 배우기](http://learnbranch.urigit.com)
 ]
 
 .half-width[
