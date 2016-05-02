@@ -33,7 +33,7 @@ class: center, middle
 개인/팀 개발 생산성 대폭 향상
 ---
 
-# 목표: Kickstart
+# 목표 - Kickstart
 
 .full-width[[![](img/kickstart.png)](https://youtu.be/olBM1U5bO7Y?t=8s)]
 버전관리 & Git 사용 설득
@@ -143,61 +143,56 @@ class: center, middle, inverse
 # Git이 참 훌륭한데...
 
 * 숙지할 개념이 있습니다.
-* 서브버전과도 다릅니다.
+* Subversion과도 다릅니다.
 * __한마디로 조금 노력이 필요합니다.__
 * 걱정금지: 그래봐야 별 거 아닙니다.
 ---
 
 background-image: url("img/distributed.png")
 
-# 특징 (1)
+# 특징(1)
 
 DVCS
 
 ---
 
-# 특징 (2) - 차이점 or 스냅샷 기록
+# 특징(2) - 차이점 or 스냅샷 기록
 
 .full-width[![](img/deltas.png)]
 .center[각 파일에 대한 변화를 저장하는 시스템]
 
 ---
 
-# 특징 (2) - 차이점 or 스냅샷 기록
+# 특징(2) - 차이점 or 스냅샷 기록
 
 .full-width[![](img/snapshots.png)]
 .center[시간순으로 프로젝트의 스냅샷을 저장]
 
 ---
 
-# 특징 (3) - 세 가지 상태
+# 개념(1) - 세 가지 상태 영역
 
 .full-width[![](img/areas.png)]
 
 ---
-# 개념 (1) - 세가지 상태 영역
 
-## 작업 디렉토리
-
-## 인덱스
-## 히스토리
-
----
-# 개념 (2) - 커밋
+# 개념(2) - 커밋
 
 * 하나의 트리와 유래된 커밋들을 참조
 * 결국 하나의 스냅샷을 의미
 * SHA1 아이디
 
 ---
-# 개념 (3) - 브랜치
+
+# 개념(3) - 브랜치
 
 * 커밋을 참조하는 포인터
 * 커밋이 추가될 때, 따라서 이동.
 * 기본은 `master` 브랜치
 
 ---
-# 개념 (4) - 태그
+
+# 개념(4) - 태그
 
 * 커밋에 이름(표시)을 붙인 것
 
@@ -209,7 +204,7 @@ class: center, middle, inverse
 실습 해보잣!
 ---
 
-# 클라이언트 설치
+# 실습 순서
 
 1. 클라이언트 설치
 1. 최초 설정
@@ -218,23 +213,24 @@ class: center, middle, inverse
 
 ---
 
-# 클라이언트 설치
+.full-width[
+[![](img/download.png)](https://https://git-scm.com/downloads)
+]
 
-<https://git-scm.com/downloads>
+.half-width[
+## Linux
+> apt-get install git
+]
 
-## 리눅스
+.half-width[
+## Windows 설치 후
 
-``` bash
-apt-get install git
-```
+> C:\Program Files\Git
 
-## 윈도우
-
-    C:\Program Files\Git
-
+]
 ---
 
-# (1) 최초 설정
+# 실습(1) - 최초 설정
 
 ```bash
 git config --global user.name "홍길동"
@@ -257,7 +253,7 @@ git config --global credential.helper osxkeychain
 
 ---
 
-# (2) 저장소 만들기: 두가지 방법
+# 실습(2) - 저장소 만들기
 
 ## 기존 디렉터리에서 만들기
 
@@ -278,26 +274,30 @@ $ git clone https://github.com/hatemogi/git-kickstart
 
 ---
 
-# (3) 저장소에 변경 기록하기
+# 실습(3) - 변경 기록하기
 
 .full-width[![](img/lifecycle.png)]
 
 ---
 
-# (3) 저장소에 변경 기록하기
+# 실습(3.1) - 현재 상태 확인
 
 ```bash
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
-nothing to commit, working directory cleangit add README.md
+nothing to commit, working directory clean
+```
+
+---
+
+# 실습(3.2) - 새 파일 추가(Untracked)
+
+```bash
 ```
 
 
 ---
-
-
-
 
 # 시뮬레이션
 
