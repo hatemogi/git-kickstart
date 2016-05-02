@@ -1,9 +1,7 @@
 class: center, middle
 
 ![](img/logo@2x.png)
-## 버전 관리 기초
-
-김대현
+## Kickstart
 
 ---
 
@@ -15,6 +13,12 @@ class: center, middle
 * Clojure, Ruby, Java
 * 한국 개발자를 위한 플랫폼 구축에 관심
 
+.footnote[
+[Medium](https://medium.com/@hatemogi)
+[Twitter](https://twitter.com/hatemogi)
+[GitHub](https://github.com/hatemogi)
+[개인홈](https://hatemogi.com)
+]
 ---
 
 # 대상
@@ -22,10 +26,11 @@ class: center, middle
 * 버전 관리를 아직 안하는 개발자
 * Git에 관심은 있지만, 아직 기회가 닿지 않은 분
 
-# 목표
+---
+# 목표: Kickstart
 
-* 버전 관리 & Git 사용 설득
-
+.full-width[[![](img/kickstart.png)](https://youtu.be/olBM1U5bO7Y?t=8s)]
+버전관리 & Git 사용 설득
 ---
 
 # 차례
@@ -95,7 +100,9 @@ cp -R [소스DIR] [적당한-새이름]
 * Git을 쓰니 비로소 브랜치를 쓸 수 있게 됨
 * 배포 / 개발 / 핫픽스 / UI 브랜치 병행 가능
 * 분산 버전 관리 → 로컬에서 빠르게 할 수 있는 일 다양
+
 .footnote[[사내 Git 저장소 개발사례](http://www.slideshare.net/hatemogi/devon2013-git)]
+
 ---
 
 # 2016년
@@ -103,7 +110,6 @@ cp -R [소스DIR] [적당한-새이름]
 .center[[![](img/DiffusionOfInnovation.png)](https://en.wikipedia.org/wiki/Early_adopter>)]
 
 * Quiz: 우리의 위치는?
-
 
 ---
 # 요약 - Git을 알아야 하는 이유
@@ -132,7 +138,7 @@ class: center, middle, inverse
 * 숙지할 개념이 있습니다.
 * 서브버전과도 다릅니다.
 * __한마디로 조금 노력이 필요합니다.__
-
+* 걱정금지: 그래봐야 별 거 아닙니다.
 ---
 
 background-image: url("img/distributed.png")
@@ -140,7 +146,6 @@ background-image: url("img/distributed.png")
 # 특징 (1)
 
 DVCS
-
 
 ---
 
@@ -164,21 +169,56 @@ DVCS
 .full-width[![](img/areas.png)]
 
 ---
+# 개념 (1) - 세가지 상태 영역
+
+## 작업 디렉토리
+## 인덱스
+## 히스토리
+
+---
+# 개념 (2) - 커밋
+
+* 하나의 트리와 유래된 커밋들을 참조
+* 결국 하나의 스냅샷을 의미
+* SHA1 아이디
+
+---
+# 개념 (3) - 브랜치
+
+* 하나의 트리와 유래된 커밋들을 참조
+* 결국 하나의 스냅샷을 의미
+* SHA1 아이디
+
+---
+class: center, middle, inverse
+
+# 기 승 __전__ 결
+
+실습 해보잣!
+---
+
 # 클라이언트 설치
 
-* https://git-scm.com
+1. 클라이언트 설치
+1. 최초 설정
+1. 저장소 만들기
+1. 파일 변경하기
+
+---
+
+# 클라이언트 설치
+
+<https://git-scm.com/downloads>
+
+## 리눅스
+
+``` bash
+apt-get install git
+```
 
 ## 윈도우
 
     C:\Program Files\Git
-
----
-
-# 시뮬레이션
-
-> [Git w/D3](https://onlywei.github.io/explain-git-with-d3/)
->
-> [Git w/D3 zen](https://onlywei.github.io/explain-git-with-d3/#zen)
 
 ---
 
@@ -204,18 +244,36 @@ git config --global credential.helper osxkeychain
 ```
 
 ---
-class: center, middle, inverse
 
-# 기 승 __전__ 결
+# Git 저장소 만들기
 
-실습 해보잣!
+## 작업중인 디렉토리에서 새로 만들기
+
+```bash
+git init
+```
+
+## 리모트 저장소에서 복제하기
+
+```bash
+git clone [리모트 저장소 주소]
+```
+
+### 예)
+
+```bash
+git clone https://github.com/hatemogi/git-tutorial-jeju
+```
+
+
 ---
 
-# UI 클라이언트
+# 시뮬레이션
 
-* [GitHub Desktop: Simple collaboration from your desktop](https://desktop.github.com)
-* [SourceTree: A free Git & Mercurial client for Windows or Mac](https://www.sourcetreeapp.com)
-* [GitKraken: The downright luxurious Git client, for Windows, Mac & Linux](https://www.gitkraken.com)
+
+> [Git w/D3](https://onlywei.github.io/explain-git-with-d3/)
+>
+> [Git w/D3 zen](https://onlywei.github.io/explain-git-with-d3/#zen)
 
 
 ---
@@ -226,6 +284,18 @@ class: center, middle, inverse
 더 잘 쓰려면?
 
 ---
+# 무료 GUI 클라이언트
+
+* [GitHub Desktop: Simple collaboration from your desktop](https://desktop.github.com)
+* [SourceTree: A free Git & Mercurial client for Windows or Mac](https://www.sourcetreeapp.com)
+* [GitKraken: The downright luxurious Git client, for Windows, Mac & Linux](https://www.gitkraken.com)
+
+# 무료 TUI(?) 클라이언트
+
+* [Tig: Text-mode interface for git](https://github.com/jonas/tig)
+
+---
+# IDE 플러그인
 # 더 볼 자료
 
 ## 도서
