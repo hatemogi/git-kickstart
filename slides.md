@@ -17,7 +17,7 @@ http://hatemogi.github.io/git-kickstart/
 [Medium](https://medium.com/@hatemogi)
 [Twitter](https://twitter.com/hatemogi)
 [GitHub](https://github.com/hatemogi)
-[개인홈](https://hatemogi.com)
+[개인홈](http://hatemogi.com)
 ]
 ---
 
