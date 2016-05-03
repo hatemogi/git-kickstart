@@ -620,6 +620,9 @@ $ git merge testing
 
 .full-width[![](img/basic-merging-2.png)]
 
+* merge-commit
+* fast-forward
+
 ---
 
 ## 실습(6) - rebase
